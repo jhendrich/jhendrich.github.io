@@ -283,9 +283,8 @@ $(document).ready(function(){
   $("#inputForm").submit(function(e) { // This event fires when a button is clicked
     // Since we use a form for input, make sure to stop the default form behavior
     cancel(e);
-    console.log("The selected language is " + $('input[name=language]')[0].value);
     _submitToJsonToTableau($('input[name=searchTerm]')[0].value, $('input[name=category]')[0].value, 
-        $('input[name=language]:checked').val());
+        $('input[name=language]')[0].value);
   });
 });
 
@@ -303,16 +302,8 @@ $(document).ready(function(){
   <h2>Enter the category (Food, Vehicles, Health, Consumer) or blank for all:</h2>
   <input type="text" name="category" size="50" />
   <br>
-  <h2>the language for results:</h2>
-  <div>
-    <input type="radio" name="language" value="English" id="englishRadio" checked />
-    <label for="englishRadio">English</label>
-  </div>
-  <br>
-  <div>
-    <input type="radio" name="language" value="French" id="frenchRadio" />
-    <label for="frenchRadio">French</label>
-  </div>
+  <h2>Enter the language for results:</h2>
+  <input type="text" name="language" size="50" />
   <br>
   <div>
     <input class="btn-primary" type="submit" value="Submit">
