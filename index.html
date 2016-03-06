@@ -40,7 +40,7 @@
     console.log("lastRecordNumber=" + lastRecordNumber);
 
     var pageSize = 100;
-    var maxRecords = 10000; // an approximate max that we allow, not enforced with exact precision 
+    var maxRecords = 100000; // an approximate max that we allow, not enforced with exact precision 
 
     _retrieveJsonData(lastRecordNumber, function (tableData) {
       var rowData = tableData.rowData;
@@ -283,8 +283,9 @@ $(document).ready(function(){
   $("#inputForm").submit(function(e) { // This event fires when a button is clicked
     // Since we use a form for input, make sure to stop the default form behavior
     cancel(e);
+    console.log("The selected language is " + $('input[name=language]')[0].value);
     _submitToJsonToTableau($('input[name=searchTerm]')[0].value, $('input[name=category]')[0].value, 
-        $('input[name=language]')[0].value);
+        $('input[name=language]:checked').val());
   });
 });
 
@@ -294,7 +295,7 @@ $(document).ready(function(){
 
 <form id="inputForm" action="">
   <h1 class="with-subtext">Recalls and Safety Alerts</h1>
-  <p class="subtext">Provides access to a comprehensive list of recalls, advisories, and safety alerts, including recalls from Health Canada, the Canadian Food Inspection Agency, and Transport Canada. <a href="http://open.canada.ca/en/open-government-licence-canada">Open Government License - Canada</a></p>
+  <p class="subtext">Uses the Government of Canada's Recalls & Safety Alerts API to query a comprehensive list of recalls, advisories, and safety alerts, including recalls from Health Canada, the Canadian Food Inspection Agency, and Transport Canada. <a href="http://open.canada.ca/en/open-government-licence-canada">Open Government License - Canada</a></p>
   <br>
   <h2>Enter search term(s), or leave blank to query all:</h2>
   <input type="text" name="searchTerm" size="50" />  
@@ -302,11 +303,15 @@ $(document).ready(function(){
   <h2>Enter the category (Food, Vehicles, Health, Consumer) or blank for all:</h2>
   <input type="text" name="category" size="50" />
   <br>
-  <h2>Enter the language(English, French):</h2>
-  <input type="text" name="language" size="50" />
+  <h2>Choose the language for results:</h2>
+  <input type="radio" name="language" value="English" checked />English
+  <br>
+  <input type="radio" name="language" value="French" />French
   <br>
   <br>
-  <input class="btn-primary" type="submit" value="Submit">
+  <div>
+    <input class="btn-primary" type="submit" value="Submit">
+  </div>
 </form>
 
 </body>

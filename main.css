@@ -13,6 +13,8 @@ a:active {
     color: #fff;
     background-color: #ee9048;
     border: .05rem solid #fff;
+    margin: auto;
+    font-size: 20px;
 }
 
 /**
@@ -21,14 +23,17 @@ a:active {
 html,
 body {
     height: 100%;
-    color: black;
+    color: #fff;
+    font-size: 20px;
 }
 body,
 section.jumbotron {
     background-color: #335b82;
 }
 
-
+input {
+  font-size: 100%;
+}
 
 /**
  * From album.css
@@ -90,14 +95,15 @@ h1 {
 
 h2 {
     color: #fff;
-    margin: 10px;
 }
 
 h1.with-subtext {
+   color: #fff;
    margin-bottom: 5px;
 }
 
 p.subtext {
+   color: #fff;
    margin-top: 5px;
    margin-bottom: 5px;
    line-height: 1.0;
