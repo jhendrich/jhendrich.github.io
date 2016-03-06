@@ -27,7 +27,7 @@ body {
     font-size: 20px;
 }
 body,
-section.jumbotron {
+{
     background-color: #335b82;
 }
 
@@ -67,26 +67,6 @@ input {
 }
 .social a:hover {
     color: #fff;
-}
-
-.jumbotron {
-    padding-top: 4rem;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    background-color: #fff;
-}
-
-.jumbotron p:last-child {
-    margin-bottom: 0;
-}
-
-.jumbotron-heading {
-    font-weight: 300;
-    margin-bottom: 1em;
-}
-
-.jumbotron .container {
-    max-width: 40rem;
 }
 
 h1 {
